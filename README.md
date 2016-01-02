@@ -1,4 +1,4 @@
-INTRODUCTION
+### INTRODUCTION
 
 This is a template for building a Chrome extension that I developed in the
 process of porting TargetAlert (http://goo.gl/uTvUt) from Firefox to Chrome.
@@ -22,10 +22,10 @@ for a Chrome extension, but that is future work.
 
 TL;DR
 
-1) Run serve-plovr.sh
-2) On chrome://extensions, choose "Load unpacked extension..." and choose the
+1. Run serve-plovr.sh
+2. On chrome://extensions, choose "Load unpacked extension..." and choose the
    google-chrome directory
-3) Edit js/chrome/ext/contentscript/contentscript.js,
+3. Edit js/chrome/ext/contentscript/contentscript.js,
         js/chrome/ext/options/options.soy, and
         js/chrome/ext/options/options.js
    as necessary to add the desired behavior to your extension.
@@ -34,11 +34,11 @@ TL;DR
    
    If you change js/chrome/ext/background/background.js or any of its
    dependencies, then you must reload the extension from chrome://extensions.
-4) Run build.sh to create the zip file for your extension at
+4. Run build.sh to create the zip file for your extension at
    build/google-chrome-extension.zip
 
 
-DEVELOPING THE EXTENSION
+### DEVELOPING THE EXTENSION
 
 Note: Google maintains detailed documentation on developing Chrome extensions at
 http://code.google.com/chrome/extensions/docs.html.
@@ -72,7 +72,7 @@ as described above. When the file chooser appears, select the google-chrome
 directory in this project. You should now see the following entry on the
 chrome://extensions page:
 
-TODO: Extension Name - Version: 0.1 (Unpacked)
+### TODO: Extension Name - Version: 0.1 (Unpacked)
 
 Now go to any web site, such as http://google.com/. Instead of the normal title
 of the page ("Google"), you should see "The content script was executed on this
@@ -88,7 +88,7 @@ configure any options associated with your extension. The next section explains
 how to change the behavior of the options page.
 
 
-CUSTOMIZING THE EXTENSION
+### CUSTOMIZING THE EXTENSION
 
 The first thing that you should do is modify the "name" and "description" values
 for your extension in google-chrome/manifest.json. Depending on the needs of
@@ -123,7 +123,7 @@ remove the following line from manifest.json:
 You can always add it back in later if you decide to include an options page.
 
 
-WHAT HAPPENS DURING DEVELOPMENT
+### WHAT HAPPENS DURING DEVELOPMENT
 
 When you load a page that exercises your content script, it makes a request to
 the background page (see google-chrome/contentscript.js) which proxies a
@@ -142,7 +142,7 @@ makes it possible to iteratively develop the options page without reloading the
 extension.
 
 
-RELOADING YOUR EXTENSION ON chrome://extensions PAGE
+### RELOADING YOUR EXTENSION ON chrome://extensions PAGE
 
 Most reloading is taken care of by plovr, so you will rarely need to reload your
 extension from the chrome://extensions page. However, if you modify
@@ -154,7 +154,7 @@ state," so it is launched once when the extension starts and therefore any
 changes to it will not be observed unless the extension is restarted.
 
 
-STATIC RESOURCES
+### STATIC RESOURCES
 
 If your extension needs static resources, such as images or CSS files, add them
 to the google-chrome directory. You will have to reload your extension via
@@ -162,7 +162,7 @@ chrome://extensions to pick up the new resources. These resources will
 automatically be included in the release version of the extension.
 
 
-CREATING A RELEASE
+### CREATING A RELEASE
 
 To create a release, run the build.sh script in the root directory. This will
 produce a zip file in build/google-chrome-extension.zip. You can upload this
@@ -171,7 +171,7 @@ zip file to your Developer Dashboard
 your extension.
 
 
-TESTING A RELEASE
+### TESTING A RELEASE
 
 When you create a release, it creates the packaged zip file as noted above, but
 it also creates an unpacked version of the extension at build/google-chrome.
